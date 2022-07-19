@@ -1,8 +1,5 @@
-principal = 1000
-rate = 7
-rate = rate/100
-d= {}
-number =[10,20,30]
-for number in number :
-    d['Amount after {0} years'.format(number)]=principal * pow( 1+rate, number)
-print(d)
+principal = 1000.0
+rate = 0.07
+
+for year in [10,20,30]:
+    print(f'Amount after {year} year(s): {principal * (1 + rate) ** year:.2f}')

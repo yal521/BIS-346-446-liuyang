@@ -1,1 +1,1 @@
-principal = 1000.0rate = 0.07for year in range(1, 31):    print(f'Amount after {year} year(s): {principal * (1 + rate) ** year:.2f}')
+amount0 = 1000.0rate = 0.07for year in range(1, 31):    amount = amount0*((1+rate) ** year)    print('Amount after',year,'year(s): ',round(amount,2))
