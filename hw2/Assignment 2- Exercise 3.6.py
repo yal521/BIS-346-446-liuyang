@@ -1,1 +1,1 @@
-input("What is your problem?\n")answer=input("Have you had this problem before (yes or no)?\n")if answer == "yes":    print("Well, you have it again.\n")else:    print("Well, you have it now.\n")
+input("What is your problem?\n")answer=input("Have you had this problem before (yes or no)?\n")if answer == "yes":    print("Well, you have it again.\n")else:    print("Well, you have it now.\n")
