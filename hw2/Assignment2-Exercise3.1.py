@@ -5,7 +5,7 @@ failures = 0  # number of failures
 # process 10 students   
 for student in range(10):
     # get one exam result
-    result = 0
+    result=int(input('Enter result (1=pass, 2=fail): '))
     while result not in [1, 2]:
        print('Incorrect result entered.')
        result = int(input('Enter result (1=pass, 2=fail): '))
