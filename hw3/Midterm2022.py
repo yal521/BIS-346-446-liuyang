@@ -12,14 +12,13 @@ elif card1 in ['2','3','4','5','6','7','8','9','10']:
     
     
 card2 =random.choice(list(deck))
-if card2 in ['Ace']:
+if card2 in ['Ace'] and card2 != card1:
     value2=11
-elif card2 in ['Jack','Queen','King']:
+elif card2 in ['Jack','Queen','King'] and card2 != card1:
     value2=10
-elif card2 in ['2','3','4','5','6','7','8','9','10']:
+elif card2 in ['2','3','4','5','6','7','8','9','10'] and card2 != card1:
     value2=int(card2)
-value1 !=value2 
-    
+
 print(card1)
 print(card2)
 print('Total value is', value1+value2)

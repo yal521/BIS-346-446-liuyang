@@ -1,7 +1,6 @@
 import random
 deck=['Ace','2','3','4','5','6','7','8','9','10','Jack','Queen','King']
-value1=0
-value2=0
+value=0
 card1 =random.choice(list(deck))
 if card1 in ['Ace']:
     value1=11
