@@ -17,7 +17,7 @@ elif card2 in ['Jack','Queen','King']:
     value2=10
 elif card2 in ['2','3','4','5','6','7','8','9','10']:
     value2=int(card2)
-    
+value1 !=value2 
     
 print(card1)
 print(card2)
