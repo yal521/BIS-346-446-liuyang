@@ -1,11 +1,11 @@
-alphabet="abcdefghijklmnopqrstuvwxyz"
+alphabet='abcdefghijklmnopqrstuvwxyz'
 
 #a :First half of the string using starting and ending indices
-firsthalf=int(len(alphabet)/2)
+firsthalf=int(len(alphabet)//2)
 print(alphabet[0:firsthalf])
 
 #b: First half of the string using only the ending indices
-print(alphabet[:firsthalf])
+print(alphabet[:len(alphabet) // 2])
 
 #c: The second half of the string using starting and ending indices
 lastitem=len(alphabet)

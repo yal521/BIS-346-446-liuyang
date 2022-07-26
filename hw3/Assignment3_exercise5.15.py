@@ -1,32 +1,38 @@
 from operator import itemgetter 
 # tuple invoice created using sample data
-invoice = (('83','Electric sander',7,57.98),('24','power saw',18,99.99),
-('7','sledge hammer',11,21.50),('77','Hammer',76,11.99),
-('39','Jig Saw',3,79.50))
+invoice = (('83','Electric sander',7,57.98),
+           ('24','power saw',18,99.99),
+           ('7','sledge hammer',11,21.50),
+           ('77','Hammer',76,11.99),
+           ('39','Jig Saw',3,79.50))
 
 print("invoice sorted by item description")
-print(sorted(invoice,key=itemgetter(1))) #sorting invoice data according to the description
+for part, desc, quant, price in sorted(invoice, key=itemgetter(1)):
+    print(f'{part:>2}  {desc:<20}{quant:>3}{price:7.2f}')
+    
 print("invoice sorted by item price")
-print(sorted(invoice,key=itemgetter(3))) #sorting invoice data according to the price
-print('------------invoice tuple containing part description and quantity---------------')
-x = () # empty tuple to store data
-for i in invoice: # for each tuple inside invoice tuple
- temp1 = ((i[1],i[2])) #temporary tuple containing mapping between (description,quantity)
-x += (temp1,) # add this tuple to x
-print(sorted(x,key=itemgetter(1))) # sorting tuple x according to the quantity
-print('------------invoice tuple containing part description and value------------------')
-y = () #empty tuple
-for i in invoice: # for each tuple inside invoice tuple
- temp2 = (i[1],i[2]*i[3]) #temporary tuple containing mapping between (description,value)
-y += (temp2,) # adding this temporary tuple to y
-print(sorted(y,key=itemgetter(1))) # sorting tuple y according to the value
+for part, desc, quant, price in sorted(invoice, key=itemgetter(3)):
+    print(f'{part:>2}  {desc:<20}{quant:>3}{price:7.2f}')
+    
+print("desc and quant")
+quantities = [(desc, quant) for part, desc, quant, price in invoice]
+for desc, quant in sorted(quantities, key=itemgetter(1)):
+    print(f'{desc:<24}{quant:>3}')
+    
+print("desc and value")
+prices = [(desc, quant * price) for part, desc, quant, price in invoice]
+for desc, total in sorted(prices, key=itemgetter(1)):
+    print(f'{desc:<22}{total:9.2f}')
+    
+print("value in [200,500]")   
+prices = [(desc, quant * price) for part, desc, quant, price in invoice\
+          if 200 <= quant * price <= 500]
+for desc, total in sorted(prices, key=itemgetter(1)):
+    print(f'{desc:<22}{total:9.2f}')
 
-#filtering the results of for the the values between 200 and 500
-for i in y:
- if i[1]>=200 and i[1]<=500:
-    print(i)
-
-total = 0 # variable to store total amount
-for i in y:
-    total += i[1] # add value of each item to total
-print("total value is ",total) # display total
+print("total value")  
+prices = [(desc, quant * price) for part, desc, quant, price in invoice]
+for desc, total in sorted(prices, key=itemgetter(1)):
+    print(f'{desc:<22}{total:9.2f}')
+total = sum([(quant * price) for part, desc, quant, price in invoice])
+print(f'Total for all is:       {total:.2f}')
