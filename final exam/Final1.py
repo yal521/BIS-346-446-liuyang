@@ -95,9 +95,7 @@ plt.figlegend(
     labels=('1 Passenger', '2 Passengers'),
     loc='upper right')
 plt.show()
-YT['durationtime_seconds'] = ( YT['dropoff'] - YT['pickup']).dt.total_seconds()
-print('duration with minute unit',YT['durationtime_seconds'].mean()/60)
-print('duration with hour unit',YT['durationtime_seconds'].mean()/(60*60))
-print('duration with day unit',YT['durationtime_seconds'].mean()/(60*60*24))
-
-
+Yellow_Saved['durationtime_seconds'] = ( Yellow_Saved['dropoff'] - Yellow_Saved['pickup']).dt.total_seconds()
+print('duration with minute unit',Yellow_Saved['durationtime_seconds'].mean()/60)
+print('duration with hour unit',Yellow_Saved['durationtime_seconds'].mean()/(60*60))
+print('duration with day unit',Yellow_Saved['durationtime_seconds'].mean()/(60*60*24))
