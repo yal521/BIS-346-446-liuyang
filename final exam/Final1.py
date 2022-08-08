@@ -75,7 +75,7 @@ pd.set_option('display.float_format', lambda x: '%.2f' % x)
 
 Yellow_Saved['trip_distance'].describe() #mean is 3.53
 
-Yellow_Saved['duration'].describe()
+Yellow_Saved['duration'].describe() #mean is 1005.62 seconds
 
 Yellow_Saved['total_amount'].describe() #mean is 20.83
 
@@ -89,13 +89,14 @@ subs[1].scatter(YT_2['fare_amount'],YT_2['trip_distance'],
             color='blue',marker='^',label='2')
 plt.ylabel('fare_amount')
 plt.xlabel('trip_distance')
-plt.axis([-5,300,-1,60])
+plt.axis([-7,320,-2,70])
 plt.title('Fare vs Distance by Passenger Count')
 plt.figlegend(
     labels=('1 Passenger', '2 Passengers'),
     loc='upper right')
 plt.show()
 Yellow_Saved['durationtime_seconds'] = ( Yellow_Saved['dropoff'] - Yellow_Saved['pickup']).dt.total_seconds()
-print('duration with minute unit',Yellow_Saved['durationtime_seconds'].mean()/60)
-print('duration with hour unit',Yellow_Saved['durationtime_seconds'].mean()/(60*60))
-print('duration with day unit',Yellow_Saved['durationtime_seconds'].mean()/(60*60*24))
+print('duration with second unit',Yellow_Saved['durationtime_seconds'].mean(),'seconds')
+print('duration with minute unit',Yellow_Saved['durationtime_seconds'].mean()/60,'minutes')
+print('duration with hour unit',Yellow_Saved['durationtime_seconds'].mean()/(60*60),'hours')
+print('duration with day unit',Yellow_Saved['durationtime_seconds'].mean()/(60*60*24),'days')
