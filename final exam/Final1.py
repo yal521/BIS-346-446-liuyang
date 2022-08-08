@@ -99,3 +99,5 @@ YT['durationtime_seconds'] = ( YT['dropoff'] - YT['pickup']).dt.total_seconds()
 print('duration with minute unit',YT['durationtime_seconds'].mean()/60)
 print('duration with hour unit',YT['durationtime_seconds'].mean()/(60*60))
 print('duration with day unit',YT['durationtime_seconds'].mean()/(60*60*24))
+
+
