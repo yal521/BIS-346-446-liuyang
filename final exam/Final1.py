@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Read in csv file
-YT = pd.read_csv("/Users/yangliu/Desktop/MBA-BUAN 446/BIS-346-446-liuyang/Final Exam 2022.spyproject/yellow_tripdata_2022-04.csv")
+YT = pd.read_csv("/Users/yangliu/Desktop/MBA-BUAN 446/BIS-346-446-liuyang/final exam/yellow_tripdata_2022-04.csv")
 
 # Converting columns to more usable types
 
